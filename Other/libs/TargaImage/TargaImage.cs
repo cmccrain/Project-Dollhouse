@@ -377,6 +377,29 @@ namespace Paloma
            Dispose(false);
         }
 
+        /// <summary>
+        /// Creates a new instance of the TargaImage object with strFileName as the image loaded.
+        /// </summary>
+        public TargaImage(Stream FStream)
+            : this()
+        {
+            BinaryReader binReader = new BinaryReader(FStream);
+
+            if (FStream != null && FStream.Length > 0)
+            {
+                    if (FStream.CanSeek == true)
+                    {
+                        this.LoadTGAFooterInfo(binReader);
+                        this.LoadTGAHeaderInfo(binReader);
+                        this.LoadTGAExtensionArea(binReader);
+                        this.LoadTGAImage(binReader);
+                    }
+                    else
+                        throw new Exception(@"Error loading file, could not read file from disk.");
+            }
+            else
+                throw new Exception(@"Error loading file, could not read file from disk.");
+        }
 
         /// <summary>
         /// Creates a new instance of the TargaImage object with strFileName as the image loaded.
