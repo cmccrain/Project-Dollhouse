@@ -45,9 +45,9 @@ namespace TSOClient
                     if (Array.Exists(xnaKey.GetSubKeyNames(), delegate(string s) { return s.CompareTo("Framework") == 0; }))
                     {
                         RegistryKey asmKey = xnaKey.OpenSubKey("Framework");
-                        if (!Array.Exists(asmKey.GetSubKeyNames(), delegate(string s) { return s.CompareTo("v3.1") == 0; }))
+                        if (!Array.Exists(asmKey.GetSubKeyNames(), delegate(string s) { return s.CompareTo("v4.0") == 0; }))
                         {
-                            MessageBox.Show("XNA was found to be installed on your system, but you do not have version 3.1. Please download and install XNA version 3.1.");
+                            MessageBox.Show("XNA was found to be installed on your system, but you do not have version 4.0. Please download and install XNA version 3.1.");
                         }
                     }
                     else
