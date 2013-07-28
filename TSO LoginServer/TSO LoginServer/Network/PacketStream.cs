@@ -19,10 +19,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Security.Cryptography;
-using TSOClient.Network.Encryption;
-using LogThis;
 
-namespace TSOClient.Network
+namespace TSO_LoginServer.Network
 {
     public class PacketStream : Stream
     {
@@ -204,7 +202,7 @@ namespace TSOClient.Network
                 return m_PeekBuffer[m_Position];
             else
             {
-                Log.LogThis("Tried peeking from a PacketStream instance that didn't support it!", eloglevel.warn);
+                Logger.LogWarning("Tried peeking from a PacketStream instance that didn't support it!");
                 return 0;
             }
         }
@@ -220,7 +218,7 @@ namespace TSOClient.Network
                 return m_PeekBuffer[Position];
             else
             {
-                Log.LogThis("Tried peeking from a PacketStream instance that didn't support it!", eloglevel.warn);
+                Logger.LogWarning("Tried peeking from a PacketStream instance that didn't support it!");
                 return 0;
             }
         }
