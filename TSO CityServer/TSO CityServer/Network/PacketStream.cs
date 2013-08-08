@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Security.Cryptography;
+using TSO_CityServer.Network.Encryption;
 
 namespace TSO_CityServer.Network
 {
@@ -325,6 +326,13 @@ namespace TSO_CityServer.Network
         {
             m_Writer.Write(Value);
             m_Position += 1;
+            m_Writer.Flush();
+        }
+
+        public void WriteString(string Str)
+        {
+            m_Writer.Write(Str);
+            m_Position += Str.Length + 1;
             m_Writer.Flush();
         }
 
