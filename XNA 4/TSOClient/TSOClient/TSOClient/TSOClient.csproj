@@ -133,6 +133,8 @@
     <Compile Include="Code\Debug\TSOSceneInspector.designer.cs">
       <DependentUpon>TSOSceneInspector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Events\EventObject.cs" />
+    <Compile Include="Events\EventSink.cs" />
     <Compile Include="Code\GameController.cs" />
     <Compile Include="Code\GameFacade.cs" />
     <Compile Include="Code\Rendering\Camera.cs" />
@@ -226,6 +228,8 @@
     <Compile Include="Lot\Wall.cs" />
     <Compile Include="LUI\UISounds.cs" />
     <Compile Include="MusicTrack.cs" />
+    <Compile Include="Network\Events\LoginEvent.cs" />
+    <Compile Include="Network\Events\ProgressEvent.cs" />
     <Compile Include="Network\CityInfo.cs" />
     <Compile Include="Network\Encryption\ARC4.cs" />
     <Compile Include="Network\Encryption\SaltedHash.cs" />
@@ -234,6 +238,8 @@
     <Compile Include="Network\NetworkClient.cs" />
     <Compile Include="Network\NetworkController.cs" />
     <Compile Include="Network\NetworkFacade.cs" />
+    <Compile Include="Network\ProcessedPacket.cs" />
+    <Compile Include="Network\PacketHandlers.cs" />
     <Compile Include="Network\PacketStream.cs" />
     <Compile Include="Network\UIPacketHandlers.cs" />
     <Compile Include="Network\UIPacketSenders.cs" />
